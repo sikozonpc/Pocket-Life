@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
+             xmlns:local="clr-namespace:PocketLife"
+             x:Class="PocketLife.MainPage">
+
+    <ContentPage Title="Weather" >
+        <ContentPage.Content>
+
+            <Grid  Padding="10" RowSpacing="5" BackgroundColor="#32323e">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Top most layout: City name entry field-->
+
+                <Label Text=" City name:" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" TextColor="White" FontSize="20"  />
+                <Entry x:Name="cityNameEntry" Placeholder="lisbon..." Grid.Column="0" Grid.ColumnSpan="2"  Grid.Row="1" />
+
+                <Button x:Name="getWeatherButton" Text="Search" Clicked="getWeatherButton_Clicked" BackgroundColor="White" TextColor="Gray"
+                    Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" VerticalOptions="End" />
+
+                
+                
+                 <!-- Weather information on the labels -->
+                
+                <Label x:Name="currentTemperature" Text="18 ºC now"  
+                    FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                    Grid.Row="2" Grid.Column="0" 
+                    BackgroundColor="DarkSlateBlue" TextColor="White" />
+
+                <Label x:Name="descriptionTemp" Text="Cloudy and brisy" 
+                    FontSize="15" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+                    Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" 
+                    BackgroundColor="MediumPurple" TextColor="White" />
+
+                <Label x:Name="pressureInfo" Text="Pressure"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                       Grid.Row="3"  Grid.Column="0" Grid.ColumnSpan="4" 
+                       BackgroundColor="Purple"/>
+                
+                <Label  x:Name="humidtyInfo" Text="Humidity"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                       Grid.Row="4"  Grid.Column="0" Grid.ColumnSpan="4" 
+                       BackgroundColor="BlueViolet" TextColor="Black" />
+                
+                <Label x:Name="sunriseInfo" Text="Sunrise" 
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                       Grid.Row="5"  Grid.Column="0" Grid.ColumnSpan="4" 
+                       BackgroundColor="LightGoldenrodYellow" TextColor="Black" />
+                
+                <Label x:Name="windInfo" Text="Wind Speed" 
+                    HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                    Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="4" 
+                    BackgroundColor="ForestGreen" TextColor="White"/>
+                
+
+            </Grid>
+        </ContentPage.Content>
+    </ContentPage>
+
+
+    <ContentPage Title="Calendar"  BackgroundColor="#32323e">
+        <ContentPage.Content>
+            <StackLayout>
+                <controls:Calendar  SelectedDate="{Binding CalendarSelectedDate, Mode=TwoWay}" 
+                    HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"  
+                    x:Name="calendar" DateCommand="{Binding DateSelectedcommand}" BackgroundColor="#32323e"/>
+
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="Notes" BackgroundColor="#32323e">
+        <ContentPage.Content>
+            <StackLayout>
+                
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage Title="News" BackgroundColor="#32323e">
+        <ContentPage.Content>
+            <StackLayout>
+
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+</TabbedPage>
