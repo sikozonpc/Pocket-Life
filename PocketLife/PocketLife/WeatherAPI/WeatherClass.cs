@@ -9,7 +9,7 @@ namespace PocketLife
 {
     public class WeatherClass
     {
-        const string API_KEY = "3cfe7ad7612a67aaecfada45e053e034";
+        const string API_KEY = "YOU NEED TO GET ONE AT THE WEBSITE";
         string API_CALL = "http://api.openweathermap.org/data/2.5/weather?q=";
         // TEST -> http://api.openweathermap.org/data/2.5/weather?q=Lisbon&APPID=3cfe7ad7612a67aaecfada45e053e034
 
